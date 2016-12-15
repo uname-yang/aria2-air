@@ -1,0 +1,67 @@
+{
+  "name": "aria2-air",
+  "version": "1.0.0",
+  "description": "aria2-air",
+  "main": "index.js",
+  "scripts": {
+    "start": "grunt build && electron .",
+    "dev": "parallelshell \"electron . --debug\" \"npm run watch\"",
+    "build": "npm install && grunt build",
+    "watch": "grunt build && grunt watch ",
+    "lint": "standard",
+    "clean": "grunt clean",
+    "pack-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=pacckage --extend-info=assets/mac/info.plist",
+    "pack-win": "electron-packager . ElectronAPIDemos --asar  --overwrite --platform=win32 --arch=x64 --icon=assets/app-icon/win/app.ico --prune=true --out=pacckage",
+    "pack-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=pacckage",
+    "package": "electron-packager . ElectronAPIDemos --platform=all --arch=all --out=package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uname-yang/aria2-air"
+  },
+  "keywords": [
+    "nodejs",
+    "elecctron",
+    "aria2c"
+  ],
+  "author": "Yang",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "browserify": "^13.1.1",
+    "devtron": "^1.4.0",
+    "electron-packager": "^7.7.0",
+    "electron-prebuilt": "^1.4.12",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "mocha": "^2.5.3",
+    "parallelshell": "^2.0.0",
+    "standard": "^7.1.2"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.1",
+    "electron-gh-releases": "^2.0.4",
+    "electron-json-storage": "^2.0.3",
+    "electron-positioner": "^3.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "flux": "^3.1.0",
+    "font-awesome": "^4.7.0",
+    "glob": "^7.1.1",
+    "highlight.js": "^9.7.0",
+    "keymirror": "^0.1.1",
+    "octicons": "^5.0.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "react-toggle": "^2.1.1",
+    "reloading": "0.0.6",
+    "superagent": "^1.8.4",
+    "underscore": "^1.8.3"
+  }
+}
